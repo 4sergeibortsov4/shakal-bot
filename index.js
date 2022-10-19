@@ -10,8 +10,8 @@ const app = express()
 const PORT = process.env.PORT ?? 3000
 
 app.get("/", function(request, response){
-    response.send("<h2>Веб-сервер для работы телеграмм бота</h2>")
-});
+    response.sendFile('index.html')
+})
 app.listen(PORT, () => {
     console.log(`Server has been started on port ${PORT}...`)
 }) 
