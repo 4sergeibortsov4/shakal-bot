@@ -1,6 +1,10 @@
 const { Telegraf } = require('telegraf')
 const superagent = require('superagent')
 const { get } = require('superagent')
+
+///////////////////////////////////////////////
+//Веб-сервер
+//Прикручен чтобы heroku не выключал бота при привязке web порта
 const express = require("express")
 const app = express()
 const PORT = process.env.PORT ?? 3000
@@ -12,6 +16,9 @@ app.listen(PORT, () => {
     console.log(`Server has been started on port ${PORT}...`)
 }) 
 
+///////////////////////////////////////////////
+
+// ТЕЛЕГРАММ БОТ
 const bot = new Telegraf("5624083619:AAHVJZ7Ok9T4ZT4psB8X4QfFyskRu3CBGig") //токен
 
 // всякие доп.функции для разной логики
