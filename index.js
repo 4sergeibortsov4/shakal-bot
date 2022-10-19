@@ -10,7 +10,7 @@ const app = express()
 const PORT = process.env.PORT ?? 3000
 
 app.get("/", function(request, response){
-    response.render('index.html')
+    response.render('index')
 })
 app.listen(PORT, () => {
     console.log(`Server has been started on port ${PORT}...`)
