@@ -1,0 +1,16 @@
+{
+  "name": "shakal_bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Sergei Bortsov",
+  "license": "ISC",
+  "dependencies": {
+    "superagent": "^8.0.2",
+    "telegraf": "^4.10.0"
+  }
+}
