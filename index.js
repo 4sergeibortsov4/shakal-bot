@@ -1,6 +1,16 @@
 const { Telegraf } = require('telegraf')
 const superagent = require('superagent')
 const { get } = require('superagent')
+const express = require("express")
+const app = express()
+const PORT = process.env.PORT ?? 3000
+
+app.get("/", function(request, response){
+    response.send("<h2>Веб-сервер для работы телеграмм бота</h2>")
+});
+app.listen(PORT, () => {
+    console.log(`Server has been started on port ${PORT}...`)
+}) 
 
 const bot = new Telegraf("5624083619:AAHVJZ7Ok9T4ZT4psB8X4QfFyskRu3CBGig") //токен
 
