@@ -1,6 +1,7 @@
 const { Telegraf } = require('telegraf')
 const superagent = require('superagent')
 const { get } = require('superagent')
+const path = require('path')
 
 ///////////////////////////////////////////////
 //Веб-сервер
@@ -9,9 +10,8 @@ const express = require("express")
 const app = express()
 const PORT = process.env.PORT ?? 3000
 
-app.set('view engine', 'html')
 app.get("/", function(request, response){
-    response.render('./index.html')
+    response.sendFile(path.resolve(__dirname, 'static', 'index.html'))
 })
 app.listen(PORT, () => {
     console.log(`Server has been started on port ${PORT}...`)
