@@ -8,9 +8,10 @@ const { get } = require('superagent')
 const express = require("express")
 const app = express()
 const PORT = process.env.PORT ?? 3000
+
 app.set('view engine', 'html')
 app.get("/", function(request, response){
-    response.render('index')
+    response.render('./index.html')
 })
 app.listen(PORT, () => {
     console.log(`Server has been started on port ${PORT}...`)
