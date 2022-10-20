@@ -51,6 +51,8 @@ bot.hears('/yasha@shakali_bot', (ctx) => ctx.replyWithHTML('Немцы дела�
 bot.hears('/idinaxep', (ctx) => ctx.replyWithHTML('&#128405;'))
 bot.hears('/idinaxep@shakali_bot', (ctx) => ctx.replyWithHTML('&#128405;'))
 
+bot.hears('/bomboleila', (ctx) => ctx.replyWithHTML('&#128545;'))
+bot.hears('/bomboleila@shakali_bot', (ctx) => ctx.replyWithHTML('&#128545;'))
 
 // сложные команды 
 bot.hears('/dollar', async(ctx) => await superagent.get('https://api.exchangerate.host/latest?base=USD&symbols=RUB').end(async(err, res) => {
