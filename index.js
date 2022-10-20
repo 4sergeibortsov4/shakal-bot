@@ -3,6 +3,9 @@ const superagent = require('superagent')
 const { get } = require('superagent')
 const path = require('path')
 
+// ТЕЛЕГРАММ БОТ
+const bot = new Telegraf("5624083619:AAHVJZ7Ok9T4ZT4psB8X4QfFyskRu3CBGig") //токен
+
 ///////////////////////////////////////////////
 //Веб-сервер
 //Прикручен чтобы heroku не выключал бота при привязке web порта
@@ -15,12 +18,10 @@ app.get("/", function(request, response){
 })
 app.listen(PORT, () => {
     console.log(`Server has been started on port ${PORT}...`)
+    bot.launch() // запуск бота
 }) 
 
 ///////////////////////////////////////////////
-
-// ТЕЛЕГРАММ БОТ
-const bot = new Telegraf("5624083619:AAHVJZ7Ok9T4ZT4psB8X4QfFyskRu3CBGig") //токен
 
 // всякие доп.функции для разной логики
 function reversedate(str) {
@@ -110,7 +111,3 @@ bot.hears('/weather@shakali_bot', async(ctx) => await superagent.get('https://ap
         }
     }
 }))
-
-
-
-bot.launch() // запуск бота
