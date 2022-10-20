@@ -91,7 +91,11 @@ bot.hears('/weather', async(ctx) => await superagent.get('https://api.openweathe
         console.log(err)
     } else {
         const data = JSON.parse(res.text)
-        ctx.reply(`Погода на сегодня, шакалы:\nОписание: ${data.weather[0].description}\nТемпература: ${data.main.temp.toString().slice(0,2)} °С\nСкорость ветра: ${data.wind.speed} м/с`)
+        if(data.main.temp >= 10){
+            ctx.reply(`Погода на сегодня, шакалы:\nОписание: ${data.weather[0].description}\nТемпература: ${data.main.temp.toString().slice(0,2)} °С\nСкорость ветра: ${data.wind.speed} м/с`)
+        } else {
+            ctx.reply(`Погода на сегодня, шакалы:\nОписание: ${data.weather[0].description}\nТемпература: ${data.main.temp.toString().slice(0,1)} °С\nСкорость ветра: ${data.wind.speed} м/с`)
+        }
     }
 }))
 bot.hears('/weather@shakali_bot', async(ctx) => await superagent.get('https://api.openweathermap.org/data/2.5/weather?lat=52.60&lon=39.59&appid=c1e3bbe22f6c49a041c5e0065dadb1fb&lang=ru&units=metric').end(async(err, res) => {
@@ -99,7 +103,11 @@ bot.hears('/weather@shakali_bot', async(ctx) => await superagent.get('https://ap
         console.log(err)
     } else {
         const data = JSON.parse(res.text)
-        ctx.reply(`Погода на сегодня, шакалы:\nОписание: ${data.weather[0].description}\nТемпература: ${data.main.temp.toString().slice(0,2)} °С\nСкорость ветра: ${data.wind.speed} м/с`)
+        if(data.main.temp >= 10){
+            ctx.reply(`Погода на сегодня, шакалы:\nОписание: ${data.weather[0].description}\nТемпература: ${data.main.temp.toString().slice(0,2)} °С\nСкорость ветра: ${data.wind.speed} м/с`)
+        } else {
+            ctx.reply(`Погода на сегодня, шакалы:\nОписание: ${data.weather[0].description}\nТемпература: ${data.main.temp.toString().slice(0,1)} °С\nСкорость ветра: ${data.wind.speed} м/с`)
+        }
     }
 }))
 
