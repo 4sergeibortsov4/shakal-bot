@@ -4,7 +4,7 @@ const { get } = require('superagent')
 const path = require('path')
 
 // ТЕЛЕГРАММ БОТ
-const bot = new Telegraf("5624083619:AAHVJZ7Ok9T4ZT4psB8X4QfFyskRu3CBGig") //токен
+const bot = new Telegraf("~") //токен
 
 ///////////////////////////////////////////////
 //Веб-сервер
