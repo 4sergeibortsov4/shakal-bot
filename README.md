@@ -7,6 +7,5 @@ Bot for Telegram on NodeJS(ExpressJS) + HTML
 <hr>
 <a href="https://shakal-bot.herokuapp.com/">LINK BOT WEBSITE</a>
 <hr>
-<br>
 <a href="https://t.me/shakali_bot">LINK BOT ON TELEGRAM</a>
 <hr>
