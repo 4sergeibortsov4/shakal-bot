@@ -5,10 +5,8 @@ Bot for Telegram on NodeJS(ExpressJS) + HTML
 <h2 style="text-align: center">This bot created on NodeJS with Web-server Express. Over time I will refine it.</h2>
 <h2 style="text-align: center"> This bot is powered by Heroku. 
 <hr>
-<a href="https://shakal-bot.herokuapp.com/">LINK</a>
-<br>
+<a href="https://shakal-bot.herokuapp.com/">LINK BOT WEBSITE</a>
 <hr>
 <br>
 <a href="https://t.me/shakali_bot">LINK BOT ON TELEGRAM</a>
-<br>
 <hr>
