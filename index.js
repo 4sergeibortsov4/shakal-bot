@@ -2,6 +2,8 @@ const { Telegraf } = require('telegraf')
 const superagent = require('superagent')
 const { get } = require('superagent')
 const path = require('path')
+const cron = require('node-cron')
+const date = new Date()
 
 // ТЕЛЕГРАММ БОТ
 const bot = new Telegraf("~") //токен
@@ -19,7 +21,19 @@ app.get("/", function(request, response){
 app.listen(PORT, () => {
     console.log(`Server has been started on port ${PORT}...`)
     bot.launch() // запуск бота
-}) 
+})
+
+// раз в 5 минут делаем GET-запрос на сайт чтобы heroku не выключал приложение и бота
+
+cron.schedule('* 5 * * * *', async() => {
+    await superagent.get('https://shakal-bot.herokuapp.com/').end(async(err, res) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log('Reconnect BOT!!!' + date)
+    }
+})
+})
 
 ///////////////////////////////////////////////
 
